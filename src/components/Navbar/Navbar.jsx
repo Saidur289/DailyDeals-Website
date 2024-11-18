@@ -1,13 +1,14 @@
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.jpg'
 const Navbar = () => {
   const links = (
     <>
       {" "}
       <li>
-        <a>Home</a>
+        <NavLink to='/'>Home</NavLink>
       </li>
       <li>
-        <a>Brands</a>
+        <NavLink to = '/brands'>Brands</NavLink>
       </li>
       <li>
         <a>Profile</a>

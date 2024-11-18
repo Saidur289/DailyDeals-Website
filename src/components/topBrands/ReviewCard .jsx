@@ -1,16 +1,22 @@
 import { FaStar } from 'react-icons/fa';
 
 const ReviewCard  = ({review}) => {
-    const { name, profilePic, rating, comment } = review;
+    const { name, profilePic, rating, comment, id } = review;
      // Function to render stars based on rating
   const renderStars = (rating) => {
     const validRating = isNaN(rating) ? 0 : Math.min(Math.max(parseInt(rating), 0), 5);
 
     // Create full and empty star arrays
-    const fullStars = Array(validRating).fill(<FaStar className="text-yellow-500" />);
-    const emptyStars = Array(5 - validRating).fill(<FaStar className="text-gray-300" />);
+    const fullStars = Array(validRating)
+    .fill(0)
+    .map((_, index) => <FaStar key={`full-${index}`} className="text-yellow-500" />);
 
-    return [...fullStars, ...emptyStars];
+  // Create empty stars with unique keys
+  const emptyStars = Array(5 - validRating)
+    .fill(0)
+    .map((_, index) => <FaStar key={`empty-${index}`} className="text-gray-300" />);
+
+  return [...fullStars, ...emptyStars];
   };
 
     

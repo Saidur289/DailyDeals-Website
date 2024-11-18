@@ -24,7 +24,7 @@ const Home = () => {
             <Banner></Banner>
             <TopBrands></TopBrands>
             <SellBrands brands = {brands}></SellBrands>
-            <Trending brands = {brands}></Trending>
+            <Trending  brands = {brands}></Trending>
          <div className="w-11/12 mx-auto bg-[#F9FAFB] flex flex-col justify-center items-center">
             <h1 className="text-2xl font-bold text-center mb-3">Customer Reviews & Ratings</h1>
             <p className="text-gray-500 w-3/5 mx-auto text-center mb-3">Browse through our collection of customer reviews and see why so many people love what we offer! Honest feedback, real experiences.</p>

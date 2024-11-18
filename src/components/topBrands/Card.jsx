@@ -5,7 +5,7 @@ const Card = ({brand}) => {
     const { brand_name, brand_logo, coupons, category } = brand;
 
     return (
-      <div className="max-w-sm p-4 bg-[#F9FAFB] border border-gray-200 rounded-lg shadow-md">
+      <div className="max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-md">
         {/* Brand Logo */}
         <div className="flex justify-center mb-4">
           <img

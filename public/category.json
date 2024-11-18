@@ -1,0 +1,48 @@
+[
+    {
+      "id": "1",
+      "brand_name": "TechGizmo",
+      "brand_logo": "https://i.ibb.co.com/nzCGF9z/tel.jpg"
+    },
+    {
+      "id": "2",
+      "brand_name": "FashionHub",
+      "brand_logo": "https://i.ibb.co.com/hKm9tL4/fashion.jpg"
+    },
+    {
+      "id": "3",
+      "brand_name": "GroceryMart",
+      "brand_logo": "https://i.ibb.co.com/M9mkFKj/grocherry.jpg"
+    },
+    {
+      "id": "4",
+      "brand_name": "FitGear",
+      "brand_logo": "https://i.ibb.co.com/h9ngTVv/fitgear.png"
+    },
+    {
+      "id": "5",
+      "brand_name": "BookWorld",
+      "brand_logo": "https://i.ibb.co.com/PtnkbzQ/bookworld.jpg"
+    },
+    {
+      "id": "6",
+      "brand_name": "AutoParts",
+      "brand_logo": "https://i.ibb.co.com/ncHxQRf/auto-Parts.jpg"
+    },
+    {
+      "id": "7",
+      "brand_name": "BeautyHeaven",
+      "brand_logo": "https://i.ibb.co.com/yBbmrZx/beauty.jpg"
+    },
+    {
+      "id": "8",
+      "brand_name": "ToyPlanet",
+      "brand_logo": "https://i.ibb.co.com/726pnh5/toy-Planet.jpg"
+    },
+    {
+      "id": "9",
+      "brand_name": "KitchenEssentials",
+      "brand_logo": "https://i.ibb.co.com/JCyWFhS/kichen.jpg"
+    }
+  ]
+  

@@ -11,7 +11,7 @@ const TopBrands = () => {
         .then((data) => setBrands(data))
     }, [])
     return (
-        <div className='flex flex-col justify-center items-center mb-3 w-11/12 mx-auto bg-orange-100 p-5'>
+        <div className='flex flex-col justify-center items-center mb-3 w-11/12 mx-auto bg-[#F9FAFB] p-5'>
              <h1 className="text-2xl font-bold mb-3">Explore Popular Brands</h1>
              <Marquee pauseOnHover>
                 {

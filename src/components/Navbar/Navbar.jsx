@@ -15,7 +15,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-orange-100">
+    <div className="navbar bg-[#F9FAFB]">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +49,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-orange-600 text-white">Login</a>
+        <a className="btn bg-[#4CAF50] text-white">Login</a>
       </div>
     </div>
   );

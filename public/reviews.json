@@ -1,0 +1,27 @@
+[
+    {
+      "name": "John Doe",
+      "profilePic": "https://i.pravatar.cc/100?img=1",
+      "rating": 5,
+      "comment": "Amazing deals and great savings!"
+    },
+    {
+      "name": "Jane Smith",
+      "profilePic": "https://i.pravatar.cc/100?img=2",
+      "rating": 4,
+      "comment": "Loved the easy-to-use platform!"
+    },
+    {
+      "name": "Emily Davis",
+      "profilePic": "https://i.pravatar.cc/100?img=3",
+      "rating": 4.5,
+      "comment": "Great variety of products and fantastic discounts!"
+    },
+    {
+      "name": "Michael Brown",
+      "profilePic": "https://i.pravatar.cc/100?img=4",
+      "rating": 5,
+      "comment": "Best shopping experience I've ever had! Highly recommended."
+    }
+  ]
+  

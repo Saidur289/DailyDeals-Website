@@ -7,6 +7,12 @@ export default {
   theme: {
     extend: {},
   },
+  safelist: [
+    "animate__animated",
+    "animate__bounce",
+    "animate__delay-2s",
+    "animate__infinite",
+    "animate__fadeIn", 
+  ],
   plugins: [require('daisyui')],
 }
-

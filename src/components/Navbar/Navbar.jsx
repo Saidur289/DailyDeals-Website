@@ -2,19 +2,21 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.jpg'
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { FaHome, FaUser } from 'react-icons/fa';
+import { FaShop } from 'react-icons/fa6';
 const Navbar = () => {
   const {handleSignOut, user} = useContext(AuthContext)
   const links = (
     <>
       {" "}
       <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink className='flex items-center border-2 border-gray-200 justify-center' to='/'><FaHome className='mb-1'></FaHome> Home</NavLink>
       </li>
       <li>
-        <NavLink to = '/brands'>Brands</NavLink>
+        <NavLink className='border-2 border-gray-200 ' to = '/brands'><FaShop></FaShop> Brands</NavLink>
       </li>
       <li>
-        <NavLink to = '/profile'>Profile</NavLink>
+        <NavLink className='flex items-center border-2 border-gray-200 ' to = '/profile'><FaUser></FaUser> Profile</NavLink>
       </li>
     </>
   );

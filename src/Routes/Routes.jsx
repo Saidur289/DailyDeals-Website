@@ -11,6 +11,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Profile from "../Pages/Profile/Profile";
 import UpdateProfile from "../Pages/Profile/UpdateProfile";
+import Forget from "../Pages/Login/Forget";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -61,6 +62,10 @@ import UpdateProfile from "../Pages/Profile/UpdateProfile";
         {
           path: '/updatePro',
           element: <UpdateProfile></UpdateProfile>
+        },
+        {
+          path: '/forget',
+          element: <Forget></Forget>,
         }
       ]
     },

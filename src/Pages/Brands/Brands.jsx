@@ -5,10 +5,25 @@ import Brand from "./Brand";
 const Brands = () => {
     const brands = useLoaderData()
 
+    const [search, setSearch] = useState('')
+    const [filterBrand, setFilterBrand] = useState(brands)
+    const handleSearch = e => {
+      setSearch(e.target.value)
+      if(e.target.value){
+        const searchData = brands.filter((brand) => 
+          brand.brand_name.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+        setFilterBrand(searchData)
+      }
+      else{
+        setFilterBrand(brands)
+      }
+    }
+   
   return (
     <div>
       <label className="input input-bordered flex items-center gap-2 my-5">
-        <input type="text" className="grow" placeholder="Search" />
+        <input type="text" className="grow" onChange={handleSearch} value={search} placeholder="Search" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -27,7 +42,7 @@ const Brands = () => {
         <p className="text-center   md:w-4/5 mx-auto py-3 mb-3  text-gray-500">Experience the convenience of finding all your favorite brands under one roof! From trending styles to timeless essentials, explore a diverse range of products tailored to your needs. Shop effortlessly and discover exclusive deals, all in one seamless platform</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
             {
-                brands.map((brand) => <Brand key={brand.id} brand = {brand}></Brand>)
+                filterBrand.map((brand) => <Brand key={brand.id} brand = {brand}></Brand>)
             }
         </div>
 

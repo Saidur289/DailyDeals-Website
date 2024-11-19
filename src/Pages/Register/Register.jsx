@@ -1,10 +1,10 @@
 
 import {  useContext, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Register = () => {
-    const { handleSignUp, setUser, updateUser}  = useContext(AuthContext)
+    const { handleSignUp, setUser, updateUser, handleLoginGoogle}  = useContext(AuthContext)
     const navigate = useNavigate()
     const [err, setError] = useState('')
     const [show, setShow] = useState(false)
@@ -39,7 +39,7 @@ const Register = () => {
             navigate('/')
           })
           .catch((error) => {
-            console.log(error);
+           setError(error.message)
           })
 
         })
@@ -47,6 +47,16 @@ const Register = () => {
           setError(error.message)
         })
        
+    }
+    const handleGoogle = () => {
+      handleLoginGoogle()
+      .then((result) => {
+        setUser(result.user)
+        navigate('/')
+      })
+      .catch((error) => {
+        setError(error.message)
+      })
     }
   return (
     <div className="min-h-screen flex justify-center items-center mt-5">
@@ -111,6 +121,7 @@ const Register = () => {
             err && <p className="text-red-500">{err}</p>
         }
         <p className="p-3 text-center">Already Have an account? <Link className="text-red-500" to = '/login'>Login</Link></p>
+        <h1 onClick={handleGoogle} className="flex items-center justify-center gap-3 mt-3 bg-green-900 hover:bg-green-700 text-white text-sm py-3 rounded-lg transition duration-300"><FaGoogle></FaGoogle> Sign Up With Google</h1>
       </div>
     </div>
   );

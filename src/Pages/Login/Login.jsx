@@ -1,24 +1,41 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
-    const {handleSingIn, setUser} = useContext(AuthContext)
+    const {handleSingIn, setUser, handleLoginGoogle} = useContext(AuthContext)
+    const [err, setError] = useState('')
+    const [email, setEmail] = useState('')
+    const navigate = useNavigate()
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target 
         const email = form.email.value 
         const password = form.password.value
+        setError('')
         handleSingIn(email, password)
         .then((result) => {
-          console.log(result.user);
           setUser(result.user)
         })
         .catch((error) => {
-          console.log(error);
+          setError(error.message)
         })
       
+       }
+       const handleGoogle = () => {
+        handleLoginGoogle()
+        .then((result) => {
+          setUser(result.user)
+          navigate('/')
+        })
+        .catch((error) => {
+          setError(error.message)
+        })
+      }
+       const handleForgetPassword = () => {
+        navigate("/forget", {state: {email}});
        }
     return (
         <div className="flex min-h-screen justify-center items-center">
@@ -33,6 +50,8 @@ const Login = () => {
                type="email"
                name="email"
                placeholder="email"
+               value={email}
+               onChange={(e) => setEmail(e.target.value)}
                className="input input-bordered"
                required
              />
@@ -49,7 +68,7 @@ const Login = () => {
                required
              />
              <label className="label">
-               <a href="#" className="label-text-alt link link-hover">
+               <a onClick={handleForgetPassword} className="label-text-alt link link-hover">
                  Forgot password?
                </a>
              </label>
@@ -58,8 +77,13 @@ const Login = () => {
              <button className="bg-green-600 hover:bg-green-700 text-white text-sm py-3 rounded-lg transition duration-300">Login</button>
            </div>
          </form>
+         {
+            err && <p className="text-red-500 text-center">{err}</p>
+        }
          <p className="text-center font-semibold">Do Not Have An Account? <Link className="text-red-500 " to = '/register'>Register</Link></p>
+         <h1 onClick={handleGoogle} className="flex items-center justify-center gap-3 mt-3 bg-green-900 hover:bg-green-700 text-white text-sm py-3 rounded-lg transition duration-300"><FaGoogle></FaGoogle> Sign In With Google</h1>
        </div>
+       
        
       </div>
     );

@@ -5,7 +5,7 @@ import Card from "./Card";
 const SellBrands = ({brands}) => {
    
     const saleBrands = brands.filter((brand) => brand.isSaleOn)
-    console.log(saleBrands);
+    
     return (
       <div className="w-11/12 mx-auto bg-[#F9FAFB]">
         <h1 className="text-2xl font-bold text-center mb-3">Shop Brands on Sell</h1>

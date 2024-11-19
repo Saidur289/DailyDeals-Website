@@ -12,6 +12,7 @@ import Register from "../Pages/Register/Register";
 import Profile from "../Pages/Profile/Profile";
 import UpdateProfile from "../Pages/Profile/UpdateProfile";
 import Forget from "../Pages/Login/Forget";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,7 +30,7 @@ import Forget from "../Pages/Login/Forget";
         },
         {
           path: '/brand/:id',
-          element: <Details></Details>,
+          element: <PrivateRoute><Details></Details></PrivateRoute>,
           loader: async ({params}) => {
             const res = await fetch('/brands.json')
             const data = await res.json()
@@ -57,7 +58,7 @@ import Forget from "../Pages/Login/Forget";
         },
         {
           path: '/profile',
-          element: <Profile></Profile>,
+          element: <PrivateRoute><Profile></Profile></PrivateRoute>,
         },
         {
           path: '/updatePro',

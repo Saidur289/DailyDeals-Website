@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
     const {handleSingIn, setUser, handleLoginGoogle} = useContext(AuthContext)
+    const location = useLocation()
     const [err, setError] = useState('')
     const [email, setEmail] = useState('')
     const navigate = useNavigate()
@@ -18,6 +19,7 @@ const Login = () => {
         handleSingIn(email, password)
         .then((result) => {
           setUser(result.user)
+          navigate(location?.state? location.state : '/')
         })
         .catch((error) => {
           setError(error.message)
@@ -28,7 +30,7 @@ const Login = () => {
         handleLoginGoogle()
         .then((result) => {
           setUser(result.user)
-          navigate('/')
+          navigate(location?.state? location.state : '/')
         })
         .catch((error) => {
           setError(error.message)

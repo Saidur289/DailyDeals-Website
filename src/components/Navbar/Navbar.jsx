@@ -15,9 +15,13 @@ const Navbar = () => {
       <li>
         <NavLink className='border-2 border-gray-200 ' to = '/brands'><FaShop></FaShop> Brands</NavLink>
       </li>
-      <li>
+      {
+        user && (
+          <li>
         <NavLink className='flex items-center border-2 border-gray-200 ' to = '/profile'><FaUser></FaUser> Profile</NavLink>
       </li>
+        )
+      }
     </>
   );
   return (

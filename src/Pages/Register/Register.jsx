@@ -1,11 +1,12 @@
 
 import {  useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Register = () => {
     const { handleSignUp, setUser, updateUser, handleLoginGoogle}  = useContext(AuthContext)
     const navigate = useNavigate()
+    const location = useLocation()
     const [err, setError] = useState('')
     const [show, setShow] = useState(false)
     const handleSubmit = e => {
@@ -29,14 +30,14 @@ const Register = () => {
         handleSignUp(email, password)
         .then((result) => {
           setUser(result.user);
-          // e.target.reset()
+          e.target.reset()
           const updatedData = {
             displayName: name,
             photoURL: photo
           }
           updateUser(updatedData)
           .then(() => {
-            navigate('/')
+            navigate(location?.state? location.state : '/')
           })
           .catch((error) => {
            setError(error.message)
@@ -52,7 +53,7 @@ const Register = () => {
       handleLoginGoogle()
       .then((result) => {
         setUser(result.user)
-        navigate('/')
+        navigate(location?.state? location.state : '/')
       })
       .catch((error) => {
         setError(error.message)

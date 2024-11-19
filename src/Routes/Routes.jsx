@@ -1,6 +1,5 @@
 import {
     createBrowserRouter,
-    RouterProvider,
   } from "react-router-dom";
 
 import Home from "../Pages/Home/Home";
@@ -10,6 +9,8 @@ import Details from "../components/Details/Details";
 import BrandsDetails from "../Pages/Brands/BrandsDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Profile from "../Pages/Profile/Profile";
+import UpdateProfile from "../Pages/Profile/UpdateProfile";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -52,6 +53,14 @@ import Register from "../Pages/Register/Register";
         {
           path: '/register',
           element: <Register></Register>,
+        },
+        {
+          path: '/profile',
+          element: <Profile></Profile>,
+        },
+        {
+          path: '/updatePro',
+          element: <UpdateProfile></UpdateProfile>
         }
       ]
     },

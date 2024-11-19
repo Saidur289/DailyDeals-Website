@@ -1,13 +1,24 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Login = () => {
+    const {handleSingIn, setUser} = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target 
         const email = form.email.value 
         const password = form.password.value
-      console.log(email, password);
+        handleSingIn(email, password)
+        .then((result) => {
+          console.log(result.user);
+          setUser(result.user)
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      
        }
     return (
         <div className="flex min-h-screen justify-center items-center">
@@ -49,6 +60,7 @@ const Login = () => {
          </form>
          <p className="text-center font-semibold">Do Not Have An Account? <Link className="text-red-500 " to = '/register'>Register</Link></p>
        </div>
+       
       </div>
     );
 };

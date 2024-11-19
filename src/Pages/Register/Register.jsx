@@ -1,8 +1,11 @@
 
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Register = () => {
+    const { handleSignUp, setUser, updateUser}  = useContext(AuthContext)
+    const navigate = useNavigate()
     const [err, setError] = useState('')
     const [show, setShow] = useState(false)
     const handleSubmit = e => {
@@ -23,6 +26,26 @@ const Register = () => {
             setError('password must be 6 character')
             return;
         }
+        handleSignUp(email, password)
+        .then((result) => {
+          setUser(result.user);
+          // e.target.reset()
+          const updatedData = {
+            displayName: name,
+            photoURL: photo
+          }
+          updateUser(updatedData)
+          .then(() => {
+            navigate('/')
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+
+        })
+        .catch((error) => {
+          setError(error.message)
+        })
        
     }
   return (

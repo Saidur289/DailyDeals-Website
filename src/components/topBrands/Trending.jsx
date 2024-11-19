@@ -26,8 +26,8 @@ const Trending = ({brands}) => {
                 <p className="text-sm text-gray-500">{brand.category}</p>
                 {/* Button */}
                 <a
-                  href={brand.shop_link}
-                  className="inline-block mt-4 px-4 py-2 bg-[#4CAF50] text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                  
+                  className="inline-block mt-4 px-4 py-2 bg-[#4CAF50] text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                 >
                   Explore Deals
                 </a>

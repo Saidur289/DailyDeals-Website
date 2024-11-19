@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Brand = ({ brand }) => {
   const { brand_name, rating, description, brand_logo, isSaleOn, id } = brand;
@@ -33,7 +34,7 @@ const Brand = ({ brand }) => {
 
         {/* View Coupons Button */}
        <Link to = {`/brand/${id}`}>
-       <button className="w-full bg-green-600 hover:bg-green-700 text-white text-sm py-2 rounded-lg transition duration-300">
+       <button disabled = {!isSaleOn}   className="w-full bg-green-600 hover:bg-green-700 text-white text-sm py-2 rounded-lg transition duration-300">
           View Coupons
         </button>
        </Link>

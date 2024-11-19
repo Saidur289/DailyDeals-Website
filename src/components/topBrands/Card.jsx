@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -33,9 +34,9 @@ const Card = ({brand}) => {
   
         {/* Action Button */}
         <div className="mt-4 text-center">
-          <button className="px-4 py-2 text-white bg-[#4CAF50] rounded hover:bg-orange-700">
+         <Link to = '/brands' title="Go To Brands"> <button className="px-4 py-2 text-white bg-[#4CAF50] rounded hover:bg-orange-700">
             View Offers
-          </button>
+          </button></Link>
         </div>
       </div>
     );

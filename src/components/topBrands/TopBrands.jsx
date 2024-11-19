@@ -13,10 +13,11 @@ const TopBrands = () => {
     return (
         <div className='flex flex-col justify-center items-center mb-3 w-11/12 mx-auto bg-[#F9FAFB] p-5'>
              <h1 className="text-2xl font-bold mb-3">Explore Popular Brands</h1>
-             <Marquee pauseOnHover>
+             <Marquee pauseOnHover speed={100}>
                 {
-                    brands.map((brand) => <Link key={brand.id} to = {`/brand/${brand.id}`}>
-                        <img src={brand.brand_logo} title={brand.brand_name} className='w-[100px] object-cover rounded-full h-[100px] mr-15 ' alt="" />
+                    brands.map((brand) => <Link key={brand.id} to = {`/brandsDetails/${brand.id}`}>
+                        <img src={brand.brand_logo} title={brand.brand_name} className='w-[100px] hover:shadow-xl hover:border-green-700
+ object-cover rounded-full h-[100px] mr-15 ' alt="" />
                     </Link>)
                 }
              </Marquee>

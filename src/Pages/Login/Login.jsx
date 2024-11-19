@@ -19,6 +19,7 @@ const Login = () => {
         handleSingIn(email, password)
         .then((result) => {
           setUser(result.user)
+          e.target.reset()
           navigate(location?.state? location.state : '/')
         })
         .catch((error) => {

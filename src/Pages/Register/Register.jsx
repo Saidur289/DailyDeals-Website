@@ -15,6 +15,7 @@ const Register = () => {
         const email = e.target.email.value 
         const password = e.target.password.value 
         const photo = e.target.photo.value 
+        setError('')
         if(!/[a-z]/.test(password)){
             setError('password must contain at least one lowercase')
             return;

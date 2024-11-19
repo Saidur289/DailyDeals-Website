@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Details = () => {
     const brand = useLoaderData()
-    const { brand_name, brand_logo, rating, coupons } = brand;
+    const { brand_name, brand_logo, rating, coupons, shop_link } = brand;
      // Function to handle copying coupon code
   const handleCopy = (code) => {
     toast.success(`Coupon code "${code}" copied!`, { position: "top-right" });
@@ -51,7 +51,7 @@ const Details = () => {
 
               {/* Use Now Button */}
               <button
-                onClick={() => window.open("https://brand_link.com", "_blank")}
+                onClick={() => window.open(shop_link, "_blank")}
                 className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-700"
               >
                 Use Now

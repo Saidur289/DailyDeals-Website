@@ -21,7 +21,7 @@
           "coupon_type": "free-shipping"
         }
       ],
-      "shop_link": "https://example.com/techgizmo",
+      "shop_link": "https://techgizmozone.com/",
       "category": "Electronics",
       "isSaleOn": true
     },
@@ -59,7 +59,7 @@
           "coupon_type": "percentage"
         }
       ],
-      "shop_link": "https://example.com/grocerymart",
+      "shop_link": "https://www.grocerymart.com.my/",
       "category": "Grocery",
       "isSaleOn": true
     },
@@ -78,7 +78,7 @@
           "coupon_type": "percentage"
         }
       ],
-      "shop_link": "https://example.com/fitgear",
+      "shop_link": "https://shopfitgear.com/",
       "category": "Fitness",
       "isSaleOn": true
     },
@@ -116,7 +116,7 @@
           "coupon_type": "percentage"
         }
       ],
-      "shop_link": "https://example.com/autoparts",
+      "shop_link": "https://shop.advanceautoparts.com/",
       "category": "Automotive",
       "isSaleOn": true
     },
@@ -135,7 +135,7 @@
           "coupon_type": "percentage"
         }
       ],
-      "shop_link": "https://example.com/beautyheaven",
+      "shop_link": "https://www.beautyheaven.com.au/",
       "category": "Beauty",
       "isSaleOn": true
     },
@@ -173,7 +173,7 @@
           "coupon_type": "percentage"
         }
       ],
-      "shop_link": "https://example.com/kitchenessentials",
+      "shop_link": "https://kessentials.com/",
       "category": "Home & Kitchen",
       "isSaleOn": true
     }

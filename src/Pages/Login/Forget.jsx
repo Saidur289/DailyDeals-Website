@@ -7,10 +7,11 @@ const Forget = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState(location.state?.email || '')
     const handleResetPassword = () => {
-        window.open("https://mail.google.com", "_blank");
+        // Redirect user to Gmail logout page
+        window.location.href = "https://mail.google.com/mail/u/0/logout";
       };
     return (
-        <div>
+        <div className="max-w-sm mx-auto flex flex-col justify-center items-center border rounded-md shadow-sm space-y-3 my-4">
       <h2>Forgot Password</h2>
       <form
         onSubmit={(e) => {
@@ -20,11 +21,13 @@ const Forget = () => {
       >
         <input
           type="email"
+          className="border-2 rounded-sm p-3"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="submit">Reset Password</button>
+        <br />
+        <button  type="submit">Reset Password</button>
       </form>
     </div>
     );

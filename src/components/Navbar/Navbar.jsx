@@ -13,7 +13,7 @@ const Navbar = () => {
         <NavLink className='flex items-center border-2 border-gray-200 justify-center' to='/'><FaHome className='mb-1'></FaHome> Home</NavLink>
       </li>
       <li>
-        <NavLink className='border-2 border-gray-200 ' to = '/brands'><FaShop></FaShop> Brands</NavLink>
+        <NavLink className=' flex items-center border-2 border-gray-200 ' to = '/brands'><FaShop></FaShop> Brands</NavLink>
       </li>
       {
         user && (
@@ -51,7 +51,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="text-xl text-orange-400"><img className='w-12 h-12 rounded-full ' src={logo} alt="" /></a>
+        <a className="text-xl text-orange-400"><img className='w-14 h-14 rounded-full ' src={logo} alt="" /></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -68,8 +68,8 @@ const Navbar = () => {
           )
         }
         {
-          user && user?.email ? <Link to = '/'><a onClick={handleSignOut} className="btn bg-[#4CAF50] text-white">Log Out</a></Link>: <><Link to = '/login'><a className="btn bg-[#4CAF50] text-white">Login</a></Link>
-          <Link to = '/register'><a className="btn bg-[#4CAF50] text-white">Register</a></Link>
+          user && user?.email ? <Link to = '/'><p onClick={handleSignOut} className="btn bg-[#4CAF50] text-white">Log Out</p></Link>: <><Link to = '/login'><p className="btn bg-[#4CAF50] text-white">Login</p></Link>
+          <Link to = '/register'><p className="btn bg-[#4CAF50] text-white">Register</p></Link>
           </>
         }
         

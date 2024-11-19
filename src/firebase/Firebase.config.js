@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCbrvLWeTEt_zHaWBWMbcumqoA-Liaztwg",
-  authDomain: "dailydeals-project.firebaseapp.com",
-  projectId: "dailydeals-project",
-  storageBucket: "dailydeals-project.firebasestorage.app",
-  messagingSenderId: "586871090682",
-  appId: "1:586871090682:web:9ef1f67b6ef24a41084843"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

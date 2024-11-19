@@ -3,7 +3,7 @@ import banner2 from '../../assets/banner-2.avif'
 import banner3 from '../../assets/clem-onojeghuo-HpEDSZukJqk-unsplash.jpg'
 const Banner = () => {
   return (
-    <div className="carousel w-full lg:h-[600px]">
+    <div className="carousel w-full md:h-[600px] lg:h-[600px]">
       <div id="slide1" className="carousel-item relative w-full">
         <img
           src={banner1}

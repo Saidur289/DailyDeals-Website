@@ -40,7 +40,7 @@ const Brands = () => {
       <div className="bg-[#F9FAFB] rounded-md">
         <h1 className="font-bold text-center text-2xl mb-3">Your Favorite Brands in One Place</h1>
         <p className="text-center   md:w-4/5 mx-auto py-3 mb-3  text-gray-500">Experience the convenience of finding all your favorite brands under one roof! From trending styles to timeless essentials, explore a diverse range of products tailored to your needs. Shop effortlessly and discover exclusive deals, all in one seamless platform</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+        <div className="w-11/12 mx-auto flex flex-col gap-3">
             {
                 filterBrand.map((brand) => <Brand key={brand.id} brand = {brand}></Brand>)
             }
